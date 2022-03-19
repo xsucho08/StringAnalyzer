@@ -1,4 +1,7 @@
 ﻿@model StringAnalyzer.Models.StringStatistics
+@using StringAnalyzer.Services
+
+
 
 <div>
     <h4>Results</h4>
@@ -11,14 +14,49 @@
             @Html.DisplayFor(model => model.Text)
         </dd>
     </dl>
-    <dl class="row">
+        <dl class="row">
         <dt class = "col-sm-2">
             <p>Longest word(s)</p>
         </dt>
         <dd class = "col-sm-10">
-            @Model.PrintArrayList(@Model.LongestWords())
+             @GetAsString.ArrayListToString(@Model.LongestWords())
+        </dd>
+    </dl
+      </dl>
+        <dl class="row">
+        <dt class = "col-sm-2">
+            <p>Sorted</p>
+        </dt>
+        <dd class = "col-sm-10">
+             @GetAsString.ArrayToString(@Model.Alpabetize())
         </dd>
     </dl>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            <p>Number of words</p>
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.NumberOfWords()
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            <p>Number of rows</p>
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.NumberOfRows()
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            <p>Number of sentences</p>
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.NumberOfSentences()
+        </dd>
+    </dl>
+ 
+
 </div>
 <div>
     @Html.ActionLink("New string to analyze", "TextInput", new { /* id = Model.PrimaryKey */ }) |

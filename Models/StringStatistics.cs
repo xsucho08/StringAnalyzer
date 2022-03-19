@@ -15,12 +15,55 @@ namespace StringAnalyzer.Models
                 WordArray = Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
             }
         }
+
         string[] WordArray;
 
-        char[] separators = new char[] { ' ', '.', ',', ';', '!', '?', '\n', '(', ')' };
+        char[] separators = new char[] { ' ', '.', ',', ';', '!', '?', '\n', '(', ')', '\t', '\b', '\f', '\0', '\r', '\v'};
+
+        //Pocitani vet pri vice radcich nefunguje.
         char[] delimiterChars = new char[] { '.', '?', '!' };
         string newRow = "\n";
+
         private string text;
+
+
+        //Spatne to pocita, snazim se najit problem.
+        //--------------------------------------------------------------------------------------------------------
+        public char kdeJeProblem()
+        {
+            char[] divny = new char[] { '\t', '\b', '\f', '\0', '\r', '\v' };
+
+            foreach(char item in divny)
+            {
+                if(Text.Contains('\t'))
+                {
+                    return 't';
+                }
+                else if (Text.Contains('\b'))
+                {
+                    return 'b';
+                }
+                else if (Text.Contains('\f'))
+                {
+                    return 'f';
+                }
+                else if (Text.Contains('\0'))
+                {
+                    return '0';
+                }
+                else if (Text.Contains('\r'))
+                {
+                    return 'r';
+                }
+                else if (Text.Contains('\v'))
+                {
+                    return 'v';
+                }
+            }
+            return 'g';
+        }
+        //--------------------------------------------------------------------------------------------------------
+
 
         public StringStatistics(string text)
         {
@@ -43,7 +86,7 @@ namespace StringAnalyzer.Models
         }
 
         // Returns Integer with number of row.
-        public int NumberOfRow()
+        public int NumberOfRows()
         {
             int row = Text.Split(newRow).Length;
             return row;
@@ -52,7 +95,7 @@ namespace StringAnalyzer.Models
         // Integer number of sentences.
         public int NumberOfSentences()
         {
-            string text = Text.Replace("\n", "").Replace(" ", "");
+            string text = Text.Replace("\n", "").Replace("\r", "").Replace(" ", "");
             string[] row = text.Split(delimiterChars);
             int counter = 0;
             for (int i = 0; i < row.Length - 2; i++)
@@ -196,23 +239,23 @@ namespace StringAnalyzer.Models
 
 
         // StringBuilder with items from arraylist and every word is divided by comma.
+
         public StringBuilder PrintArrayList(ArrayList arrlist)
         {
             StringBuilder text = new StringBuilder();
-            if (arrlist.Count == 1)
-            {
-                text.Append(arrlist[0]);
-            }
-            else
-            {
-                foreach (var item in arrlist)
+            foreach (var item in arrlist)
                 {
-                    text.Append(item).Append(", ");
+                    if (arrlist[arrlist.Count - 1] == item)
+                    {
+                        text.Append(item);
+                    }
+                    else
+                    {
+                        text.Append(item).Append(", ");
+                    }
                 }
-            }
             return text;
         }
-
 
         public override string ToString()
         {
