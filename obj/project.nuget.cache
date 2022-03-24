@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OdNddZkvU5WB/r5Ttp2ZxPhVLDN1WsEaneHaW6GQU9Mq7wpEB7Orrg9YAni+sX865g78NdXec9z6qrjM6LZGWw==",
+  "dgSpecHash": "WuvWxpCQYCQZsStawhhppXVCri/lHWAmk/WSRo96TTUbeObnktTj2p+YOQD1ABR4iva+Ax9TVvdYQ1DJaoJPqA==",
   "success": true,
   "projectFilePath": "C:\\Users\\radka\\source\\repos\\StringAnalyzer\\StringAnalyzer\\StringAnalyzer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\radka\\.nuget\\packages\\chart.js\\2.9.3\\chart.js.2.9.3.nupkg.sha512",
     "C:\\Users\\radka\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\radka\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\radka\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",

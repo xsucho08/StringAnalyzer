@@ -13,16 +13,16 @@ namespace StringAnalyzer.Models
             {
                 text = value;
                 WordArray = Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                WordArray = WordArray.Select(s => s.ToLowerInvariant()).ToArray();
             }
         }
 
         string[] WordArray;
-
-        char[] separators = new char[] { ' ', '.', ',', ';', '!', '?', '\n', '(', ')', '\t', '\b', '\f', '\0', '\r', '\v'};
+        readonly char[] separators = new char[] { ' ', '.', ',', ';', '!', '?', '\n', '(', ')', '\t', '\b', '\f', '\0', '\r', '\v'};
 
         //Pocitani vet pri vice radcich nefunguje.
-        char[] delimiterChars = new char[] { '.', '?', '!' };
-        string newRow = "\n";
+        readonly char[] delimiterChars = new char[] { '.', '?', '!' };
+        readonly string newRow = "\n";
 
         private string text;
 
@@ -116,7 +116,7 @@ namespace StringAnalyzer.Models
         // Returns arrayList of longest words.
         public ArrayList LongestWords()
         {
-            ArrayList longestWords = new ArrayList();
+            ArrayList longestWords = new();
             int maxLenght = 0;
 
             foreach (string word in WordArray)
@@ -141,7 +141,7 @@ namespace StringAnalyzer.Models
         // Returns arrayList of shortest words
         public ArrayList ShortestWords()
         {
-            ArrayList shortestWords = new ArrayList();
+            ArrayList shortestWords = new();
             int minLenght = int.MaxValue;
 
             foreach (string word in WordArray)
@@ -170,12 +170,26 @@ namespace StringAnalyzer.Models
             return WordArray;
         }
 
+        public int[] Delky()
+        {
+            int[] delkaS = new int[WordArray.Length];
+            Alpabetize();
+            for (int i = 0; i < WordArray.Length; i++)
+            {
+                delkaS[i] = WordArray[i].Length;
+
+            }
+            return delkaS;
+            //Array.Sort(WordArray);
+           // return WordArray;
+
+        }
         // using dictionary something like hashmap and every occurrence add value by 1 and after finding biggest value
         // Returns arrayList of most used words.
         public ArrayList MostCommonWords()
         {
             var dict = new Dictionary<string, int>();
-            ArrayList commonWords = new ArrayList();
+            ArrayList commonWords = new();
             int ocurencies = 0;
 
             //var dict = new Dictionary<string, int>();
@@ -242,7 +256,7 @@ namespace StringAnalyzer.Models
 
         public StringBuilder PrintArrayList(ArrayList arrlist)
         {
-            StringBuilder text = new StringBuilder();
+            StringBuilder text = new();
             foreach (var item in arrlist)
                 {
                     if (arrlist[arrlist.Count - 1] == item)

@@ -5,7 +5,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="ShowResults">
+        <form asp-action="ShowResults" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Text" class="control-label"></label>
@@ -14,15 +14,16 @@
                 <br/>
             </div>
             <div class="form-group">
-                <input type="submit" value="Analyze" class="btn btn-primary" />
+                 <button type="submit" class="btn btn-primary">Analyze</button>
+                 <button type="submit" class="btn btn-primary" formaction="GraphAnalysis">Graph analysis</button>
+               <!-- <input type="submit" value="Analyze" class="btn btn-primary" /> -->
+               <!-- <input type="submit" value="Show graphs" class="btn btn-primary" /> -->
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

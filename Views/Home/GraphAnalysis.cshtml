@@ -1,0 +1,71 @@
+﻿@model StringAnalyzer.Models.StringStatistics
+@using StringAnalyzer.Services
+
+<html>
+
+	<head>
+	
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		
+
+		<style>
+			#chart_container{
+				width:400px;
+				height:80px;
+				border: 1px solid #ddd;
+				padding: 1px;
+				border-radius: 4px;
+			}
+		</style>
+		
+		<h2>Results</h2>
+
+	</head>
+
+	<body>
+		<div>
+  <canvas id="myChart"></canvas>
+</div>
+ 
+<script>
+	
+	var words = @Html.Raw(Json.Serialize(@Model.Alpabetize()));
+	var wordsLenght = @Html.Raw(Json.Serialize(CustomizeArray.StringArrayToIntArray(@Model.Alpabetize())));
+
+	
+	//var words= @Html.Raw(Json.Serialize(@ViewBag.POKUS));
+	//var arrayLenght= @Html.Raw(Json.Serialize(@ViewBag.DELKA));
+   
+  const data = {
+    labels: words,
+    datasets: [{
+      label: 'Word lenght analysis',
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: 'rgba(255, 99, 132, 1)',
+      data: wordsLenght,
+    }]
+  };
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {
+	scales: {
+            y: {
+                beginAtZero: true
+            }
+        }}
+
+  };
+</script>
+
+<script>
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>
+ 
+	</body>
+
+</html>

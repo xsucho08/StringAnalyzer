@@ -26,14 +26,34 @@ namespace StringAnalyzer.Controllers
         {
             if (newString != null)
             {
-                //TO DO
+                
                 return View("AnalyzeThis", newString);
+            }
+            else
+            {  //TO DO
+                return View("CantAnalyse");
+            }
+        }
+
+        public ActionResult GraphAnalysis(StringStatistics newString)
+        {
+           //var zkusim = new StringStatistics();
+            //zkusim = newString;
+            //ViewBag.POKUS = zkusim.Alpabetize();
+            //ViewBag.DELKA = zkusim.Delky();
+
+            if (newString != null)
+            {
+                //TO DO
+                return View("GraphAnalysis", newString);
             }
             else
             {
                 return View("CantAnalyse");
             }
+      
         }
+
 
         /**
 

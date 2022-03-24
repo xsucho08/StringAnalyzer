@@ -8,12 +8,14 @@
     ".NETCoreApp,Version=v6.0": {
       "StringAnalyzer/1.0.0": {
         "dependencies": {
+          "Chart.js": "2.9.3",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.2"
         },
         "runtime": {
           "StringAnalyzer.dll": {}
         }
       },
+      "Chart.js/2.9.3": {},
       "Humanizer.Core/2.2.0": {
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -1935,6 +1937,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Chart.js/2.9.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SY8PuXOJANgsEGMtuXPb/gxazfXdySUuFwTPbQUbw/YKiltR6FJ3mXrLFpr6N2MSCS7oUtfOhTotxLifyJcQNA==",
+      "path": "chart.js/2.9.3",
+      "hashPath": "chart.js.2.9.3.nupkg.sha512"
     },
     "Humanizer.Core/2.2.0": {
       "type": "package",
