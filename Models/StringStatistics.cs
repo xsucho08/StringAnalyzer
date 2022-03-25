@@ -98,15 +98,25 @@ namespace StringAnalyzer.Models
             string text = Text.Replace("\n", "").Replace("\r", "").Replace(" ", "");
             string[] row = text.Split(delimiterChars);
             int counter = 0;
-            for (int i = 0; i < row.Length - 2; i++)
+            if (row.Length == 2)
             {
-                if (i == 0 && Char.IsUpper(row[i][0]))
+                if (Char.IsUpper(row[0][0]))
                 {
                     counter++;
                 }
-                if (Char.IsUpper(row[i + 1][0]))
+            }
+            else
+            {
+                for (int i = 0; i < (row.Length - 2); i++)
                 {
-                    counter++;
+                    if (i == 0 && Char.IsUpper(row[i][0]))
+                    {
+                        counter++;
+                    }
+                    if (Char.IsUpper(row[i + 1][0]))
+                    {
+                        counter++;
+                    }
                 }
             }
             return counter;
