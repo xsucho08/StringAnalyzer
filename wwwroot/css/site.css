@@ -22,16 +22,12 @@ body {
 }
 
 .form-control {
-    grid-area: messages_flow;
     width: 300%;
     height: 300px;
     border-radius: 10px;
     overflow-y: auto;
     margin: auto;
-    display: flex;
-    flex-direction: column;
     align-items: end;
-    justify-content: flex-end;
     padding: 15px 10px;
 
 }

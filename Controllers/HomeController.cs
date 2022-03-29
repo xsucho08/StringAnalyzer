@@ -6,6 +6,10 @@ namespace StringAnalyzer.Controllers
 {
     public class HomeController : Controller
     {
+
+        //     private const StringStatistics defaultString = StringStatistics ("Toto je defaultni string pro testovani. Kdyz vsechno selze pouzij tento.");
+       // public const String defaultString = "Toto je defaultni string pro testovani. Kdyz vsechno selze pouzij tento.";
+       
         // GET: HomeController
         public ActionResult Index()
         {
@@ -19,19 +23,43 @@ namespace StringAnalyzer.Controllers
 
         public IActionResult TextInput()
         {
-            return View();
+            try
+            {
+                return View();
+            }
+            catch
+            {
+                return RedirectToAction("Index");
+            }
+            
         }
 
         public IActionResult ShowResults(StringStatistics newString)
         {
-            if (newString != null)
+            try
             {
-                
-                return View("AnalyzeThis", newString);
+                if (newString != null && newString.Text != null)
+                    {
+                    
+                        return View("AnalyzeThis", newString);
+                    }
+                else
+                {
+                   // StringStatistics defaultString = new StringStatistics("Toto je defaultni string pro testovani. Kdyz vsechno selze pouzij tento.");
+
+                   // Console.WriteLine("Nepovedlo se", defaultString);
+                    //                     StringStatistics defaultString = new StringStatistics("Toto je defaultni string pro testovani. Kdyz vsechno selze pouzij tento.");
+                    //TO DO
+                    return View("CantAnalyse");
+                }
+
             }
-            else
-            {  //TO DO
-                return View("CantAnalyse");
+            catch (Exception ex)
+            {
+                StringStatistics defaultString = new StringStatistics("Toto je defaultni string pro testovani. Kdyz vsechno selze pouzij tento.");
+
+                //TO DO
+                return View("CantAnalyse", ex);
             }
         }
 

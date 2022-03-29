@@ -11,9 +11,19 @@ namespace StringAnalyzer.Models
         {
             get => text; set
             {
-                text = value;
-                WordArray = Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-                WordArray = WordArray.Select(s => s.ToLowerInvariant()).ToArray();
+                try
+                {
+                    text = value;
+                    WordArray = Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                    WordArray = WordArray.Select(s => s.ToLowerInvariant()).ToArray();
+                }
+                catch (NullReferenceException ex)
+                {
+                    text = null;
+                    WordArray = new string[] {};
+                    WordArray = WordArray.Select(s => s.ToLowerInvariant()).ToArray();
+                    throw new Exception("Exception {0}", ex);
+                }
             }
         }
 
@@ -29,7 +39,7 @@ namespace StringAnalyzer.Models
 
         //Spatne to pocita, snazim se najit problem.
         //--------------------------------------------------------------------------------------------------------
-        public char kdeJeProblem()
+        public char KdeJeProblem()
         {
             char[] divny = new char[] { '\t', '\b', '\f', '\0', '\r', '\v' };
 
@@ -67,13 +77,23 @@ namespace StringAnalyzer.Models
 
         public StringStatistics(string text)
         {
-            Text = text;
-            WordArray = Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+            try
+            {
+                Text = text;
+                WordArray = Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+                WordArray = WordArray.Select(s => s.ToLowerInvariant()).ToArray();
+            }
+            catch (NullReferenceException ex)
+            {
+                Text = null;
+                WordArray = new string[] { };
+                WordArray = WordArray.Select(s => s.ToLowerInvariant()).ToArray();
+                throw new Exception("Exception {0}", ex);
+            }
         }
 
         public StringStatistics()
         {
-
             // WordArray = Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
         }
 
@@ -180,20 +200,7 @@ namespace StringAnalyzer.Models
             return WordArray;
         }
 
-        public int[] Delky()
-        {
-            int[] delkaS = new int[WordArray.Length];
-            Alpabetize();
-            for (int i = 0; i < WordArray.Length; i++)
-            {
-                delkaS[i] = WordArray[i].Length;
-
-            }
-            return delkaS;
-            //Array.Sort(WordArray);
-           // return WordArray;
-
-        }
+       
         // using dictionary something like hashmap and every occurrence add value by 1 and after finding biggest value
         // Returns arrayList of most used words.
         public ArrayList MostCommonWords()
