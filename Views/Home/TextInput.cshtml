@@ -19,17 +19,7 @@
                <!--  <button type="submit" class="btn btn-primary" formaction="TextInput">Default sentences</button> -->
                <!-- <input type="submit" value="Analyze" class="btn btn-primary" /> -->
                <!-- <input type="submit" value="Show graphs" class="btn btn-primary" /> -->
-                <script>
-                function add() {
-                //Then we concatenate the string "content" onto textarea
-                document.getElementById("default").value = "Toto je retezec predstavovany nekolika radky,\n"
- + "ktere jsou od sebe oddeleny znakem LF (Line Feed).\n"
- + "Je tu i nejaky ten vykricnik! Pro ucely testovani i otaznik?\n"
- + "Toto je jen zkratka zkr. ale ne konec vety. A toto je\n"
- + "posledni veta!";
-
-                }
-                </script>
+             
             </div>
             <div class="form-group">
                 <br/>
@@ -44,6 +34,17 @@
     </div>
 </div>
 
+<script>
+                function add() {
+                //Then we concatenate the string "content" onto textarea
+                document.getElementById("default").value = "Toto je retezec predstavovany nekolika radky,\n"
+ + "ktere jsou od sebe oddeleny znakem LF (Line Feed).\n"
+ + "Je tu i nejaky ten vykricnik! Pro ucely testovani i otaznik?\n"
+ + "Toto je jen zkratka zkr. ale ne konec vety. A toto je\n"
+ + "posledni veta!";
+
+                }
+                </script>
 
 
 @section Scripts {

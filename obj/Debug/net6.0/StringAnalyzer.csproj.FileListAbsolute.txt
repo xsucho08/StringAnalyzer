@@ -1,4 +1,3 @@
-C:\Users\radka\source\repos\StringAnalyzer\StringAnalyzer\bin\Debug\net6.0\StringAnalyzer.dll
 C:\Users\radka\source\repos\StringAnalyzer\StringAnalyzer\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\radka\source\repos\StringAnalyzer\StringAnalyzer\bin\Debug\net6.0\appsettings.json
 C:\Users\radka\source\repos\StringAnalyzer\StringAnalyzer\bin\Debug\net6.0\libman.json
@@ -6,6 +5,7 @@ C:\Users\radka\source\repos\StringAnalyzer\StringAnalyzer\bin\Debug\net6.0\Strin
 C:\Users\radka\source\repos\StringAnalyzer\StringAnalyzer\bin\Debug\net6.0\StringAnalyzer.exe
 C:\Users\radka\source\repos\StringAnalyzer\StringAnalyzer\bin\Debug\net6.0\StringAnalyzer.deps.json
 C:\Users\radka\source\repos\StringAnalyzer\StringAnalyzer\bin\Debug\net6.0\StringAnalyzer.runtimeconfig.json
+C:\Users\radka\source\repos\StringAnalyzer\StringAnalyzer\bin\Debug\net6.0\StringAnalyzer.dll
 C:\Users\radka\source\repos\StringAnalyzer\StringAnalyzer\bin\Debug\net6.0\StringAnalyzer.pdb
 C:\Users\radka\source\repos\StringAnalyzer\StringAnalyzer\bin\Debug\net6.0\Humanizer.dll
 C:\Users\radka\source\repos\StringAnalyzer\StringAnalyzer\bin\Debug\net6.0\MessagePack.dll

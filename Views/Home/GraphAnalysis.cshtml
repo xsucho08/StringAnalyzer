@@ -18,13 +18,17 @@
 			}
 		</style>
 		
-		<h4>Results</h4>
+		
 
 	</head>
 
 	<body>
+        <h4>Results</h4>
 		<div>
+            <h4>Lenght of words</h4>
   <canvas id="myChart"></canvas>
+              <h4>Letters words start with</h4>
+   <canvas id="myChart2"></canvas>
 </div>
  
 <script>
@@ -32,6 +36,8 @@
 	var words = @Html.Raw(Json.Serialize(@Model.Alpabetize()));
 	var wordsLenght = @Html.Raw(Json.Serialize(CustomizeArray.StringArrayToIntArray(@Model.Alpabetize())));
 
+	var keysW = @Html.Raw(Json.Serialize(@Model.WordsByFirstLetters().Keys));
+	var valuesW = @Html.Raw(Json.Serialize(@Model.WordsByFirstLetters().Values));
 	
 	//var words= @Html.Raw(Json.Serialize(@ViewBag.POKUS));
 	//var arrayLenght= @Html.Raw(Json.Serialize(@ViewBag.DELKA));
@@ -57,12 +63,38 @@
         }}
 
   };
+
+  const dataW = {
+    labels: keysW,
+    datasets: [{
+      label: 'Words alphabet analysis',
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: 'rgba(255, 99, 132, 1)',
+      data: valuesW,
+    }]
+  };
+
+  const configW = {
+    type: 'bar',
+    data: dataW,
+    options: {
+	scales: {
+            y: {
+                beginAtZero: true
+            }
+        }}
+
+  };
 </script>
 
 <script>
   const myChart = new Chart(
     document.getElementById('myChart'),
     config
+  );
+  const myChart2 = new Chart(
+    document.getElementById('myChart2'),
+    configW
   );
 </script>
  

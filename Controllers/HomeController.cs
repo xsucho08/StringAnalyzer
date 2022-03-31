@@ -45,41 +45,38 @@ namespace StringAnalyzer.Controllers
                     }
                 else
                 {
-                   // StringStatistics defaultString = new StringStatistics("Toto je defaultni string pro testovani. Kdyz vsechno selze pouzij tento.");
-
-                   // Console.WriteLine("Nepovedlo se", defaultString);
-                    //                     StringStatistics defaultString = new StringStatistics("Toto je defaultni string pro testovani. Kdyz vsechno selze pouzij tento.");
-                    //TO DO
                     return View("CantAnalyse");
                 }
 
             }
             catch (Exception ex)
             {
-                StringStatistics defaultString = new StringStatistics("Toto je defaultni string pro testovani. Kdyz vsechno selze pouzij tento.");
-
-                //TO DO
                 return View("CantAnalyse", ex);
             }
         }
 
         public ActionResult GraphAnalysis(StringStatistics newString)
         {
-           //var zkusim = new StringStatistics();
+            //var zkusim = new StringStatistics();
             //zkusim = newString;
             //ViewBag.POKUS = zkusim.Alpabetize();
             //ViewBag.DELKA = zkusim.Delky();
 
-            if (newString != null)
+            try
             {
-                //TO DO
-                return View("GraphAnalysis", newString);
+                if (newString != null && newString.Text != null)
+                {
+                    return View("GraphAnalysis", newString);
+                }
+                else
+                {
+                    return View("CantAnalyse");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return View("CantAnalyse");
-            }
-      
+                return View("CantAnalyse", ex);
+            }      
         }
 
 

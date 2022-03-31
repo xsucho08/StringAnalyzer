@@ -8,6 +8,20 @@
 <p>Pocet slov zacinajici na a, b, c, .. (graf)</p>
 <p>Pridat tlacitko s co posle defaultni vetu na testovani.</p>
 
+<h2>To do</h2>
+<p>Nejdelsi veta.</p>
+<p>Zmenit barvy grafu.</p>
+<p>Upravit Views>Home>AnalyzeThis (vypsat vsechy zjistene veci).</p>
+<p>Lepsi uvodni stranka?.</p>
+<p>VUT logo?.</p>
+<p>Vymazat nepotrebne metody a komentare.</p>
+<p>Okomentovat.</p>
+
+
+
+
+
+
 <h2>Controllers</h2>
 <p>Ovlada, jaka stranka bude zobrazena. Daji se predavat objekty.</p>
 

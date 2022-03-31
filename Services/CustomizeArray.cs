@@ -44,7 +44,6 @@ namespace StringAnalyzer.Services
         {
             //StringBuilder text = new StringBuilder();
             String text = String.Join(", ", array);
-           
             return text;
         }
     }

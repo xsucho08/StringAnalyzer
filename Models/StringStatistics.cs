@@ -29,11 +29,9 @@ namespace StringAnalyzer.Models
 
         string[] WordArray;
         readonly char[] separators = new char[] { ' ', '.', ',', ';', '!', '?', '\n', '(', ')', '\t', '\b', '\f', '\0', '\r', '\v'};
-
-        //Pocitani vet pri vice radcich nefunguje.
+        char[] alphabet = Enumerable.Range('a', 26).Select(x => (char)x).ToArray();
         readonly char[] delimiterChars = new char[] { '.', '?', '!' };
         readonly string newRow = "\n";
-
         private string text;
 
 
@@ -92,10 +90,64 @@ namespace StringAnalyzer.Models
             }
         }
 
+        //public Dictionary<char,string[]> WordsByFirstLetters()
+        public Dictionary<char,int> WordsByFirstLetters()
+        {
+            Dictionary<char,int> alphabetCount = new Dictionary<char, int>();
+            foreach (char letterToCheck in alphabet)
+            {
+                alphabetCount[letterToCheck] = 0;
+            }
+
+                foreach (string wordToCheck in WordArray)
+            {
+                foreach (char letterToCheck in alphabet)
+                {
+                    if (letterToCheck.ToString().Contains(wordToCheck[0]))
+                    {
+                        if (alphabetCount.ContainsKey(letterToCheck))
+                        {
+                            alphabetCount[letterToCheck]++;
+                        }
+                        else
+                        {
+                            alphabetCount[letterToCheck] = 1;
+                        }
+                    }
+                }
+                /**
+                foreach (char letterToCheck in alphabet)
+                {              
+                   if (letterToCheck.ToString().Contains(wordToCheck[0]))
+                    {
+                        Console.WriteLine("{0} starts with {1}", wordToCheck, letterToCheck);
+                    }
+                }
+                **/
+            }
+        return alphabetCount;
+        }
+
+    
+
         public StringStatistics()
         {
             // WordArray = Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
         }
+
+        /// <summary>
+        /// //////////////////////////////////////////////////////////////////////////////////////////////////
+        /// Pro vypisovani veci do konzole pri psani novych metod
+        public string Ladeni()
+        {
+            Dictionary<char, int> My_dict = WordsByFirstLetters();
+            foreach(KeyValuePair<char, int> pair in My_dict)
+            {
+             //   Console.WriteLine("{0} and {1}", pair.Key, pair.Value);
+            }
+            return "Ladime";
+        }
+      
 
 
         // Returns Integrer with number of words.
@@ -103,11 +155,13 @@ namespace StringAnalyzer.Models
         {
             int words = WordArray.Length;
             return words;
+
         }
 
         // Returns Integer with number of row.
         public int NumberOfRows()
         {
+    
             int row = Text.Split(newRow).Length;
             return row;
         }
@@ -164,7 +218,6 @@ namespace StringAnalyzer.Models
                     longestWords.Add(word);
                 }
             }
-
             return longestWords;
         }
 
@@ -189,7 +242,6 @@ namespace StringAnalyzer.Models
                     shortestWords.Add(word);
                 }
             }
-
             return shortestWords;
         }
 
@@ -239,7 +291,6 @@ namespace StringAnalyzer.Models
                     commonWords.Add(key.Key);
                 }
             }
-
             return commonWords;
         }
 
@@ -270,7 +321,6 @@ namespace StringAnalyzer.Models
 
 
         // StringBuilder with items from arraylist and every word is divided by comma.
-
         public StringBuilder PrintArrayList(ArrayList arrlist)
         {
             StringBuilder text = new();
