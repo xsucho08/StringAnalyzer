@@ -5,12 +5,12 @@
 
 <h2>Napady na funkce a grafy</h2>
 <p>Nejdelsi veta.</p>
-<p>Pocet slov zacinajici na a, b, c, .. (graf)</p>
-<p>Pridat tlacitko s co posle defaultni vetu na testovani.</p>
+<p><del>Pocet slov zacinajici na a, b, c, .. (graf)</del></p>
+<p><del>Pridat tlacitko s co posle defaultni vetu na testovani.</del></p>
 
 <h2>To do</h2>
 <p>Nejdelsi veta.</p>
-<p>Zmenit barvy grafu.</p>
+<p><del>Zmenit barvy grafu.</del></p>
 <p>Upravit Views>Home>AnalyzeThis (vypsat vsechy zjistene veci).</p>
 <p>Lepsi uvodni stranka?.</p>
 <p>VUT logo?.</p>
