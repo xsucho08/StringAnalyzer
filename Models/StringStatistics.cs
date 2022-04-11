@@ -105,25 +105,9 @@ namespace StringAnalyzer.Models
                 {
                     if (letterToCheck.ToString().Contains(wordToCheck[0]))
                     {
-                        if (alphabetCount.ContainsKey(letterToCheck))
-                        {
                             alphabetCount[letterToCheck]++;
-                        }
-                        else
-                        {
-                            alphabetCount[letterToCheck] = 1;
-                        }
                     }
                 }
-                /**
-                foreach (char letterToCheck in alphabet)
-                {              
-                   if (letterToCheck.ToString().Contains(wordToCheck[0]))
-                    {
-                        Console.WriteLine("{0} starts with {1}", wordToCheck, letterToCheck);
-                    }
-                }
-                **/
             }
         return alphabetCount;
         }
@@ -161,7 +145,6 @@ namespace StringAnalyzer.Models
         // Returns Integer with number of row.
         public int NumberOfRows()
         {
-    
             int row = Text.Split(newRow).Length;
             return row;
         }
@@ -294,30 +277,6 @@ namespace StringAnalyzer.Models
             return commonWords;
         }
 
-
-        //TO DO: is there an adult language?
-        //----------------------------------------------------------------------------------------------------
-        public bool IsInfected()
-        {
-            if (Text.ToLower().Contains("covid"))
-            {
-                return true;
-            }
-            else if (Text.ToLower().Contains("covid-19"))
-            {
-                return true;
-            }
-            else if (Text.ToLower().Contains("sars-cov-2"))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        //---------------------------------------------------------------------------------------------
 
 
         // StringBuilder with items from arraylist and every word is divided by comma.

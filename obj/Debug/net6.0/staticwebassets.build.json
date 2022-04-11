@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0V5xPoTIqFa20iivHCxr6f2X/VfqFo775NV3RemivyU=",
+  "Hash": "ZpCvvikdkrAh/2t/a/rCFBQNohzT/irdz98VSPsjMOc=",
   "Source": "StringAnalyzer",
   "BasePath": "_content/StringAnalyzer",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\radka\\source\\repos\\StringAnalyzer\\StringAnalyzer\\wwwroot\\img\\FEKT_full_logo.png",
+      "SourceId": "StringAnalyzer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\radka\\source\\repos\\StringAnalyzer\\StringAnalyzer\\wwwroot\\",
+      "BasePath": "_content/StringAnalyzer",
+      "RelativePath": "img/FEKT_full_logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\FEKT_full_logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\radka\\source\\repos\\StringAnalyzer\\StringAnalyzer\\wwwroot\\img\\fekt_logo_cut.jpg",
+      "SourceId": "StringAnalyzer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\radka\\source\\repos\\StringAnalyzer\\StringAnalyzer\\wwwroot\\",
+      "BasePath": "_content/StringAnalyzer",
+      "RelativePath": "img/fekt_logo_cut.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\fekt_logo_cut.jpg"
     },
     {
       "Identity": "C:\\Users\\radka\\source\\repos\\StringAnalyzer\\StringAnalyzer\\wwwroot\\js\\site.js",

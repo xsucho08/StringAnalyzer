@@ -3,9 +3,10 @@
 for details on configuring this project to bundle and minify static web assets. */
 
 a.navbar-brand[b-pwf12ctyi0] {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+ 
 }
 
 a[b-pwf12ctyi0] {
@@ -22,6 +23,17 @@ a[b-pwf12ctyi0] {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+}
+
+.avbar-nav[b-pwf12ctyi0]{
+    background-color:aqua;
+}
+
+.nav-item[b-pwf12ctyi0] {
+   
+    font-size:1.1em;
+    padding-right:15px;
+    box-shadow:inset;
 }
 
 .border-top[b-pwf12ctyi0] {
