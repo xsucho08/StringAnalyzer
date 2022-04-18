@@ -5,72 +5,21 @@
 <html>
 
 	<head>
-	
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-		
-		<style>
-			#chart_container{
-				width:400px;
-				height:80px;
-				border: 1px solid #ddd;
-				padding: 1px;
-				border-radius: 4px;
-			}
-		</style>
-		
-		
-
 	</head>
 
 	<body>
         <h4>Results</h4>
         <br/>
 <div>
-            <h4>Lenght of words</h4>
-  <canvas id="myChart"></canvas>
-              <h4>Letters words start with</h4>
-   <canvas id="myChart2"></canvas>
+          <!--- <h4>Lenght of words</h4>--> 
+  <canvas id="wordLenght"></canvas>
+        <!--     <h4>Letters words start with</h4> --> 
+   <canvas id="alphabetCount"></canvas>
 </div>
  
 <script>
-	
-	var words = @Html.Raw(Json.Serialize(@Model.Alpabetize()));
-	var wordsLenght = @Html.Raw(Json.Serialize(CustomizeArray.StringArrayToIntArray(@Model.Alpabetize())));
-
-	var keysW = @Html.Raw(Json.Serialize(@Model.WordsByFirstLetters().Keys));
-	var valuesW = @Html.Raw(Json.Serialize(@Model.WordsByFirstLetters().Values));
-	
-	//var words= @Html.Raw(Json.Serialize(@ViewBag.POKUS));
-	//var arrayLenght= @Html.Raw(Json.Serialize(@ViewBag.DELKA));
-   
-  const data = {
-    labels: words,
-    datasets: [{
-      label: 'Words lenght analysis',
-      backgroundColor: 'rgba(54, 162, 235, 0.7)',
-      borderColor: 'rgba(54, 162, 235, 0.9)',
-      data: wordsLenght,
-      tension: 0.1
-    }]
-  };
-
-  const config = {
-    type: 'line',
-    data: data,
-    options: {
-	scales: {
-            y: {
-                beginAtZero: true
-            }
-        }}
-
-  };
-
-  const dataW = {
-    labels: keysW,
-    datasets: [{
-      label: 'Words alphabet analysis',
-      backgroundColor: [
+	var backgroundColours = [
       'rgba(255, 99, 132, 0.6)',
       'rgba(255, 159, 64, 0.6)',
       'rgba(255, 205, 86, 0.6)',
@@ -78,8 +27,8 @@
       'rgba(54, 162, 235, 0.6)',
       'rgba(153, 102, 255, 0.6',
       'rgba(201, 203, 207, 0.6)'
-    ],
-      borderColor: [
+    ];
+    var borderColours = [
       'rgb(255, 99, 132)',
       'rgb(255, 159, 64)',
       'rgb(255, 205, 86)',
@@ -87,34 +36,69 @@
       'rgb(54, 162, 235)',
       'rgb(153, 102, 255)',
       'rgb(201, 203, 207)'
-    ],
-      data: valuesW,
-      borderWidth: 1
+    ];
+
+	var words = @Html.Raw(Json.Serialize(@Model.Alpabetize()));
+	var wordsLenght = @Html.Raw(Json.Serialize(CustomizeArray.StringArrayToIntArray(@Model.Alpabetize())));
+    
+   
+  const dataLenght = {
+    labels: words,
+    datasets: [{
+      label: 'Words lenght analysis',
+      backgroundColor: backgroundColours[3],
+      borderColor: borderColours[3],
+      data: wordsLenght,
+      tension: 0.1
     }]
   };
 
-  const configW = {
-    type: 'bar',
-    data: dataW,
+  const configLenght = {
+    type: 'line',
+    data: dataLenght,
     options: {
 	scales: {
             y: {
                 beginAtZero: true
             }
         }}
+  };
 
+  var firstLetters = @Html.Raw(Json.Serialize(@Model.WordsByFirstLetters().Keys));
+  var occurencies = @Html.Raw(Json.Serialize(@Model.WordsByFirstLetters().Values));
+
+  const dataAlphabet = {
+    labels: firstLetters,
+    datasets: [{
+      label: 'Words alphabet analysis',
+      backgroundColor: backgroundColours,
+      borderColor: borderColours,
+      data: occurencies,
+      borderWidth: 1
+    }]
+  };
+
+  const configAlphabet = {
+    type: 'bar',
+    data: dataAlphabet,
+    options: {
+	scales: {
+            y: {
+                beginAtZero: true
+            }
+        }}
   };
 </script>
 
 <script src="path/to/chartjs/dist/chart.js"></script>
 <script>
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
+  const wordLenght = new Chart(
+    document.getElementById('wordLenght'),
+    configLenght
   );
-  const myChart2 = new Chart(
-    document.getElementById('myChart2'),
-    configW
+  const alphabetCount = new Chart(
+    document.getElementById('alphabetCount'),
+    configAlphabet
   );
 </script>
  

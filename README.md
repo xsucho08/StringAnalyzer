@@ -12,11 +12,11 @@
 <p>Nejdelsi veta.</p>
 <p><del>Zmenit barvy grafu.</del></p>
 <p>Upravit Views>Home>AnalyzeThis (vypsat vsechy zjistene veci).</p>
-<p>Lepsi uvodni stranka?.</p>
+<p><del>Lepsi uvodni stranka?</del></p>
 <p><del>VUT logo?.</del></p>
 <p>Vymazat nepotrebne metody a komentare.</p>
 <p>Okomentovat.</p>
-<p>Prejmenovat nastaveni grafu.</p>
+<p><del>Prejmenovat nastaveni grafu. </del></p>
 
 
 

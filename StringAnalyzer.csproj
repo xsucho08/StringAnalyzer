@@ -8,18 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\img\facebook.png" />
-    <Content Remove="wwwroot\img\logo_fekt.svg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Chart.js" Version="2.9.3" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\img\facebook.png" />
-    <None Include="wwwroot\img\logo_fekt.svg" />
   </ItemGroup>
 
 </Project>
