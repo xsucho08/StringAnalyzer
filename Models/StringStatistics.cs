@@ -209,7 +209,26 @@ namespace StringAnalyzer.Models
         public Dictionary<int, int> WordsByLenght()
         {
             var dict = new Dictionary<int, int>();
+           // var kratky = ShortestWords();
+            int shortest = ((string) ShortestWords()[0]).Length;
+            int longest = ((string)LongestWords()[0]).Length;
 
+            /**  foreach(string word in kratky)
+   {
+                 int lenght = word.Length;
+             }
+
+             //    int nejkratsi = kratky[0].Length();
+             
+             int shortestLength = (string)kratky[0].Length;
+             
+
+           //  for (int i = ShortestWords[0].lenght();)
+            **/
+            for(int i = shortest; i <= longest; i++)
+            {
+                dict.Add(i, 0);
+            }
             foreach (var word in WordArray)
             {
                 if (dict.ContainsKey(word.Length))
