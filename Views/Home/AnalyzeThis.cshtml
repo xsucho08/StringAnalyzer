@@ -26,12 +26,37 @@
              @CustomizeArray.ArrayListToString(@Model.LongestWords())
         </dd>
         </dl>
+     <dl class="row">
+        <dt class = "col-sm-2">
+            Shortest word(s)
+        </dt>
+        <dd class = "col-sm-10">
+            @CustomizeArray.ArrayListToString(@Model.ShortestWords())
+        </dd>
+    </dl>
+     <dl class="row">
+        <dt class = "col-sm-2">
+            Most frequent word(s) 
+        </dt>
+        <dd class = "col-sm-10">
+            @CustomizeArray.ArrayListToString(@Model.MostCommonWords())
+        </dd>
+    </dl>
         <dl class="row">
         <dt class = "col-sm-2">
-            Sorted
+            Sorted words
         </dt>
         <dd class = "col-sm-10">
              @CustomizeArray.ArrayToString(@Model.Alpabetize())
+        </dd>
+    </dl>
+        </dl>
+        <dl class="row">
+        <dt class = "col-sm-2">
+            Avarage word length
+        </dt>
+        <dd class = "col-sm-10">
+             @Model.AvarageWordLength() letters
         </dd>
     </dl>
     <dl class="row">
@@ -58,7 +83,11 @@
             @Model.NumberOfSentences()
         </dd>
     </dl>
- 
+
+
+
+
+ <!-- prumern8 delka vet-->
 
 </div>
 <div>

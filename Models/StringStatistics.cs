@@ -35,43 +35,7 @@ namespace StringAnalyzer.Models
         private string text;
 
 
-        //Spatne to pocita, snazim se najit problem.
-        //--------------------------------------------------------------------------------------------------------
-        public char KdeJeProblem()
-        {
-            char[] divny = new char[] { '\t', '\b', '\f', '\0', '\r', '\v' };
-
-            foreach(char item in divny)
-            {
-                if(Text.Contains('\t'))
-                {
-                    return 't';
-                }
-                else if (Text.Contains('\b'))
-                {
-                    return 'b';
-                }
-                else if (Text.Contains('\f'))
-                {
-                    return 'f';
-                }
-                else if (Text.Contains('\0'))
-                {
-                    return '0';
-                }
-                else if (Text.Contains('\r'))
-                {
-                    return 'r';
-                }
-                else if (Text.Contains('\v'))
-                {
-                    return 'v';
-                }
-            }
-            return 'g';
-        }
-        //--------------------------------------------------------------------------------------------------------
-
+ 
 
         public StringStatistics(string text)
         {
@@ -112,6 +76,7 @@ namespace StringAnalyzer.Models
         return alphabetCount;
         }
 
+        
     
 
         public StringStatistics()
@@ -127,7 +92,7 @@ namespace StringAnalyzer.Models
             Dictionary<char, int> My_dict = WordsByFirstLetters();
             foreach(KeyValuePair<char, int> pair in My_dict)
             {
-             //   Console.WriteLine("{0} and {1}", pair.Key, pair.Value);
+               Console.WriteLine("{0} and {1}", pair.Key, pair.Value);
             }
             return "Ladime";
         }
@@ -196,7 +161,7 @@ namespace StringAnalyzer.Models
 
             foreach (string word in WordArray)
             {
-                if (word.Length == maxLenght)
+                if (word.Length == maxLenght && !longestWords.Contains(word))
                 {
                     longestWords.Add(word);
                 }
@@ -220,13 +185,47 @@ namespace StringAnalyzer.Models
 
             foreach (string word in WordArray)
             {
-                if (word.Length == minLenght)
+                if (word.Length == minLenght && !shortestWords.Contains(word))
                 {
                     shortestWords.Add(word);
                 }
             }
             return shortestWords;
         }
+
+        public decimal AvarageWordLength()
+        {
+            decimal numberOfWords = Convert.ToDecimal(WordArray.Count());
+            decimal sums = 0;
+            foreach (var word in WordArray)
+            {
+                sums = sums + word.Length;
+            }
+
+            return sums / numberOfWords;
+
+        }
+        //fist int is how long a word is
+        public Dictionary<int, int> WordsByLenght()
+        {
+            var dict = new Dictionary<int, int>();
+
+            foreach (var word in WordArray)
+            {
+                if (dict.ContainsKey(word.Length))
+                {
+                    dict[word.Length]++;
+                }
+                else
+                {
+                    dict[word.Length] = 1;
+                }
+            }
+
+
+            return dict;
+        }
+
 
         // Alphabeticaly sorts and returns array of words.
         public string[] Alpabetize()
