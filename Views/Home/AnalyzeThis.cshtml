@@ -18,7 +18,39 @@
             @Html.DisplayFor(model => model.Text)
         </dd>
     </dl>
-        <dl class="row">
+     <dl class="row">
+        <dt class = "col-sm-2">
+            Number of sentences
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.NumberOfSentences()
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Number of rows
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.NumberOfRows()
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Number of words
+        </dt>
+        <dd class = "col-sm-10">
+            @Model.NumberOfWords()
+        </dd>
+    </dl>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Sorted words
+        </dt>
+        <dd class = "col-sm-10">
+             @CustomizeArray.ArrayToString(@Model.Alpabetize())
+        </dd>
+    </dl>
+         <dl class="row">
         <dt class = "col-sm-2">
             Longest word(s)
         </dt>
@@ -34,7 +66,16 @@
             @CustomizeArray.ArrayListToString(@Model.ShortestWords())
         </dd>
     </dl>
-     <dl class="row">
+    
+        <dl class="row">
+        <dt class = "col-sm-2">
+            Avarage word length
+        </dt>
+        <dd class = "col-sm-10">
+             @Math.Round(@Model.AvarageWordLength(), 2) letters
+        </dd>
+    </dl>
+        <dl class="row">
         <dt class = "col-sm-2">
             Most frequent word(s) 
         </dt>
@@ -42,50 +83,22 @@
             @CustomizeArray.ArrayListToString(@Model.MostCommonWords())
         </dd>
     </dl>
-        <dl class="row">
+    
+          <dl class="row">
         <dt class = "col-sm-2">
-            Sorted words
+            Most frequent letter(s)
         </dt>
         <dd class = "col-sm-10">
-             @CustomizeArray.ArrayToString(@Model.Alpabetize())
+             @CustomizeArray.ArrayListToString(@Model.MostCommonLetter())  
+             &#9 &#9 &#9
+             (@Math.Round(@Model.LetterPercents(@Model.WordsByLetters().Values.Max(),@Model.WordsByLetters()), 2) %)
+           
+             
         </dd>
-    </dl>
         </dl>
-        <dl class="row">
-        <dt class = "col-sm-2">
-            Avarage word length
-        </dt>
-        <dd class = "col-sm-10">
-             @Model.AvarageWordLength() letters
-        </dd>
-    </dl>
-    <dl class="row">
-        <dt class = "col-sm-2">
-            Number of words
-        </dt>
-        <dd class = "col-sm-10">
-            @Model.NumberOfWords()
-        </dd>
-    </dl>
-    <dl class="row">
-        <dt class = "col-sm-2">
-            Number of rows
-        </dt>
-        <dd class = "col-sm-10">
-            @Model.NumberOfRows()
-        </dd>
-    </dl>
-    <dl class="row">
-        <dt class = "col-sm-2">
-            Number of sentences
-        </dt>
-        <dd class = "col-sm-10">
-            @Model.NumberOfSentences()
-        </dd>
-    </dl>
 
 
-
+ 
 
  <!-- prumern8 delka vet-->
 

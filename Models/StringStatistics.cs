@@ -76,8 +76,55 @@ namespace StringAnalyzer.Models
         return alphabetCount;
         }
 
-        
-    
+
+        public Dictionary<char, int> WordsByLetters()
+        {
+            Dictionary<char, int> alphabetCount = new Dictionary<char, int>();
+            foreach (char letterToCheck in alphabet)
+            {
+                alphabetCount[letterToCheck] = 0;
+            }
+            foreach (string wordToCheck in WordArray)
+            {
+                for(int i = 0; i < wordToCheck.Length; i++)
+                {
+                    if(alphabetCount.ContainsKey(wordToCheck[i]))
+                    {
+                        alphabetCount[wordToCheck[i]]++;
+                    }
+                }
+            }
+            return alphabetCount;
+        }
+
+        public ArrayList MostCommonLetter()
+        {
+            Dictionary<char, int> alphabetCount = WordsByLetters();
+
+            int maxValue = alphabetCount.Values.Max();
+            ArrayList mostCommonLetters = new();
+
+            foreach (var letter in alphabet)
+            {
+                if (alphabetCount[letter] == maxValue)
+
+                {
+                    mostCommonLetters.Add(letter);
+                }
+            }
+            return mostCommonLetters;
+        }
+
+        public decimal LetterPercents(int count, Dictionary<char, int> allLetters)
+        {
+            int sum = 0;
+            foreach(int letter in allLetters.Values)
+            {
+                sum += letter;    
+            }
+
+            return 100*Convert.ToDecimal(count)/ Convert.ToDecimal(sum);
+        }
 
         public StringStatistics()
         {
@@ -89,6 +136,7 @@ namespace StringAnalyzer.Models
         /// Pro vypisovani veci do konzole pri psani novych metod
         public string Ladeni()
         {
+            
             Dictionary<char, int> My_dict = WordsByFirstLetters();
             foreach(KeyValuePair<char, int> pair in My_dict)
             {
@@ -213,18 +261,7 @@ namespace StringAnalyzer.Models
             int shortest = ((string) ShortestWords()[0]).Length;
             int longest = ((string)LongestWords()[0]).Length;
 
-            /**  foreach(string word in kratky)
-   {
-                 int lenght = word.Length;
-             }
-
-             //    int nejkratsi = kratky[0].Length();
-             
-             int shortestLength = (string)kratky[0].Length;
-             
-
-           //  for (int i = ShortestWords[0].lenght();)
-            **/
+          
             for(int i = shortest; i <= longest; i++)
             {
                 dict.Add(i, 0);
@@ -238,6 +275,7 @@ namespace StringAnalyzer.Models
                 else
                 {
                     dict[word.Length] = 1;
+                    Console.Write("Tohle by se nemelo d9t {0}", word);
                 }
             }
 

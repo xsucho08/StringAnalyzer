@@ -12,14 +12,14 @@
         <h4>Results</h4>
         <br/>
 <div>
-          <h4>Lenght of words</h4>
-  <canvas id="wordLenght"></canvas>
-  <h4>Number of words by their lenghts</h4>
-   <canvas id="lenghtCountGraph"></canvas>
+          <h5>Lenght of words</h5>
+  <canvas id="wordLenght" height="100"></canvas>
+  <h5>Number of words by their lenghts</h5>
+   <canvas id="lenghtCountGraph" height="100"></canvas>
  <!--  <canvas id="lengthCount"></canvas>--> 
         <!--     <h4>Letters words start with</h4> -->
-    <h4>Letters words start with</h4>
-   <canvas id="alphabetCount"></canvas>
+    <h5>Letters words start with</h5>
+   <canvas id="alphabetCount" height="100"></canvas>
  
 
 
@@ -101,24 +101,18 @@
   };
 
 
-   
-  
-
-</script>
-<script>
 
  var lengthW = @Html.Raw(Json.Serialize(@Model.WordsByLenght().Keys));
   var lengthCount = @Html.Raw(Json.Serialize(@Model.WordsByLenght().Values));
   var avarage = @Html.Raw(Json.Serialize(CustomizeArray.FillArray(@Model.WordsByLenght().Keys.ToArray(), @Model.AvarageWordLength())));
-   
-
-
+ 
+ 
  
 
-  const dataP = {
+  const dataLenghtCount = {
     labels: lengthW,
     datasets: [{
-      label: 'Words alphabet analysis',
+      label: 'Words lenght analysis',
       backgroundColor: backgroundColours,
       borderColor: borderColours,
       data: lengthCount,
@@ -128,9 +122,9 @@
 
 
 
-  const configP = {
+  const configLenghtCount = {
     type: 'bar',
-    data: dataP,
+    data: dataLenghtCount,
     options: {
 	scales: {
             y: {
@@ -153,7 +147,7 @@
 
    const lenghtCountGraph = new Chart(
     document.getElementById('lenghtCountGraph'),
-    configP
+    configLenghtCount
   );
 
 

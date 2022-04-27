@@ -1,6 +1,6 @@
 # StringAnalyzer
 
-<p>Uzitecne tutorialy: https://www.youtube.com/playlist?list=PLhPyEFL5u-i2ShGqmuP3uDdSy06hzBzdo <p>
+<p>Uzitecne tutorialy: https://www.youtube.com/playlist?list=PLhPyEFL5u-i2ShGqmuP3uDdSy06hzBzdo </p>
 <p>Je to webova aplikace ASP.NET MVC (Model-View-Controller). Podobne jako v multimedialnich sluzbach. Bylo na to nejvic navodu :) </p>
 
 <h2>Napady na funkce a grafy</h2>
@@ -11,7 +11,7 @@
 <h2>To do</h2>
 <p>Nejdelsi veta.</p>
 <p><del>Zmenit barvy grafu.</del></p>
-<p>Upravit Views>Home>AnalyzeThis (vypsat vsechy zjistene veci).</p>
+<p><del>Upravit Views>Home>AnalyzeThis (vypsat vsechy zjistene veci).</del></p>
 <p><del>Lepsi uvodni stranka?</del></p>
 <p><del>VUT logo?.</del></p>
 <p>Vymazat nepotrebne metody a komentare.</p>
