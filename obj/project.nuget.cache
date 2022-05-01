@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WAFyEB8cRYvyd0xWxdkzYQEKLnsdBTiTQL3GBcquc5REpFex3NSJuQuUOPKE8ae8mN3Jklss8ZCy2BeWhgCsRg==",
+  "dgSpecHash": "nRGhjL9e8b1mGhnLZ3PM87HWl52pQ48N1oLMYMB/ItZcL+qgibysS+4/4PNDrA1c49SyafQQOFg83Wcn2CvQDA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\radka\\source\\repos\\StringAnalyzer\\StringAnalyzer\\StringAnalyzer.csproj",
+  "projectFilePath": "C:\\Users\\radka\\source\\repos\\OOP\\StringAnalyzer\\StringAnalyzer\\StringAnalyzer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\radka\\.nuget\\packages\\chart.js\\2.9.3\\chart.js.2.9.3.nupkg.sha512",
     "C:\\Users\\radka\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",

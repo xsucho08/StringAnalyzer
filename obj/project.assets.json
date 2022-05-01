@@ -8649,11 +8649,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\radka\\source\\repos\\StringAnalyzer\\StringAnalyzer\\StringAnalyzer.csproj",
+      "projectUniqueName": "C:\\Users\\radka\\source\\repos\\OOP\\StringAnalyzer\\StringAnalyzer\\StringAnalyzer.csproj",
       "projectName": "StringAnalyzer",
-      "projectPath": "C:\\Users\\radka\\source\\repos\\StringAnalyzer\\StringAnalyzer\\StringAnalyzer.csproj",
+      "projectPath": "C:\\Users\\radka\\source\\repos\\OOP\\StringAnalyzer\\StringAnalyzer\\StringAnalyzer.csproj",
       "packagesPath": "C:\\Users\\radka\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\radka\\source\\repos\\StringAnalyzer\\StringAnalyzer\\obj\\",
+      "outputPath": "C:\\Users\\radka\\source\\repos\\OOP\\StringAnalyzer\\StringAnalyzer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\radka\\AppData\\Roaming\\NuGet\\NuGet.Config",
