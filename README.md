@@ -1,5 +1,17 @@
 # StringAnalyzer
 
+
+<p><b>This web application was created as a semester project for Object-Oriented Programming (BPC-OOP) class.</b></p>
+<p><b>The project assignment (In czech):</b>
+Vytvořte webovou aplikaci, která bude sloužit jako statický textový analyzátor. Vyplníte editační pole s textem a program provede analýzu textu a výsledky vhodně graficky zobrazí. Zahrňtě údaje, jako jsou četnost slov, počet slov/vět, nejdelší a nejkratší slovo/věta ...
+Využijte maximálně možnosti OOP, neduplikujte kód, používejte přehledný styl zápisu kódu a vhodné pojmenovávání tříd a členů.
+</p>
+<p><b> How does the web application work?</b>
+Input from user is passed as instance of StringStatistic class. User is able to choose between analysis shown in graphs or in text. If the user doesn't want to insert their own text button for default string can be used. User cannot pass an empty string. If the string is only spaces and other white spaces, an exception is called and warning page is shown.
+</p>
+
+
+
 <p>Uzitecne tutorialy: https://www.youtube.com/playlist?list=PLhPyEFL5u-i2ShGqmuP3uDdSy06hzBzdo </p>
 <p>Je to webova aplikace ASP.NET MVC (Model-View-Controller). Podobne jako v multimedialnich sluzbach. Bylo na to nejvic navodu :) </p>
 
@@ -17,22 +29,3 @@
 <p>Vymazat nepotrebne metody a komentare.</p>
 <p>Okomentovat.</p>
 <p><del>Prejmenovat nastaveni grafu. </del></p>
-
-
-
-
-
-
-<h2>Controllers</h2>
-<p>Ovlada, jaka stranka bude zobrazena. Daji se predavat objekty.</p>
-
-<h2>Models</h2>
-<p>Tady se davaji normalni C# tridy. Trida kterou jsme delali na cviceni je ted "model", takze vytvareni, uprava a zobrazovani podrobnosti se da udelat udela v podstate samo. Pri vytvareni "view" > View razor > Zvolit template (create, details...) a trida modelu.</p>
-
-
-<h2>Views</h2>
-<p>Tady se nastavuje vzhled jednotlivych stranek.</p>
-
-<h4>Shared/_Layout</h4>
-<p>Uprava vzhledu.</p>
-<p>Stranka "Privacy" muze byt pouzivana k testovani co a jak funguje.</p>
